@@ -2,7 +2,7 @@
 \chapter{Conceitos introdutórios de filtros}
 \label{chap: introducao_filtros}
 
-A medição de grandezas físicas é um aspecto fundamental no processo de decisão de autores autônomos, desde do ambiente hospitalar, onde os profissionais da saúde analisam sinais vitais dos pacientes, até em tarefas de exploração de planetas usando robôs, onde os sensores fornecem informações sobre o ambiente e o estado atual do robô. Em todos estes casos, a medição inerentemente envolve a presença de ruído, o que pode induzir diagnósticos errôneos da saúde do paciente ou acidentes com o robô. É comum que o sinal de interesse ocupe apenas uma determinada faixa de frequência e que os limites dela sejam conhecidos, dessa forma, o efeito do ruído pode ser mitigado se eliminarmos as componentes de frequências do sinal medido que estão fora da faixa de interesse a partir do uso de filtros eletrônicos.
+A medição de grandezas físicas é um aspecto fundamental no processo de decisão de autores autônomos, desde do ambiente hospitalar, onde os profissionais da saúde analisam sinais vitais dos pacientes, até em tarefas de exploração de planetas usando robôs, onde os sensores fornecem informações sobre o ambiente e o estado atual do robô. Em todos estes casos, a medição inerentemente envolve a presença de ruído, o que pode induzir diagnósticos errôneos da saúde do paciente ou acidentes com o robô. É comum que o sinal de interesse ocupe apenas uma determinada faixa de frequência e que os limites dela sejam conhecidos, dessa forma, o efeito do ruído pode ser mitigado se eliminarmos as componentes de frequências do sinal medido que estão fora da faixa de interesse a partir do uso de filtros eletrônicos~\cite{daryanani1976principles,sedra2011microeletronica}.
 
 \section{Categorização de filtros}
 
@@ -146,6 +146,6 @@ Na figura~\ref{fig:filtros_reais} estão apresentados exemplos circuitos de filt
     %    \centering
     %    \\ \textbf{(d)}
     %\end{minipage}
-    \caption{Filtros básicos: (a) passa-baixa, (b) passa-alta, (c) passa-faixa.}
+    \caption{Respostas dos filtros simuladas no LTspice: (a) passa-baixa, (b) passa-alta, (c) passa-faixa. Os arquivos de simulação estão disponíveis no \href{https://github.com/David1340/Apostila-Filtros-Ativos/tree/main/LTspice}{github}}
     \label{fig:LT_circuitos}
 \end{figure}
