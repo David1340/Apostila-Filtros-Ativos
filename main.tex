@@ -1,0 +1,116 @@
+\documentclass[msc,numbers]{coppe-delufs}
+\usepackage{siunitx}
+\usepackage{t1enc}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{rotating}
+\usepackage{multirow}
+\usepackage{bigstrut}
+\usepackage{url,color}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{indentfirst}
+\usepackage[toc,acronym]{glossaries}
+\usepackage{subcaption}
+%\usepackage{algorithm}
+\usepackage{mfirstuc}
+\usepackage{float}
+\usepackage{notoccite}
+\usepackage{adjustbox}
+%%%%%Pacotes incluidos por David%%%%%%
+\usepackage{enumitem}
+\usepackage[numbers]{natbib}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\newtheorem{definition}{Definição}[chapter]
+\newtheorem{postulate}{Postulado}[chapter]
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\usepackage[portuguese,ruled,linesnumbered]{algorithm2e}
+\usepackage{algpseudocode}
+\algrenewcommand\algorithmicwhile{\textbf{enquanto}}
+\usepackage{bm}
+
+%Tira todos as separações por - em final de linha
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+\graphicspath{{./figuras/}}             % pastas onde estão as figuras
+
+\makeglossaries
+\makelosymbols
+\makeloabbreviations
+
+\begin{document}
+
+  \include{siglas}
+
+  \title{Filtros ativos}
+  \foreigntitle{Quantum algorithms in the inverse kinematics problem of robot manipulators}
+  \author{David}{Oliveira Santos}
+  \advisor{Prof.}{Francisco}{Marcos de Assis}{D.Sc.}
+  \subadvisor{Prof.}{Elyson}{Ádan Nunes Carvalho}{D.Sc.}
+
+%INTEGRANTES DA BANCA EXAMINADORA (primeiro os orientadores)
+  %\examiner{Prof.}{}{D.Sc.}
+  %\examiner{Prof.}{}{D.Sc.}
+  %\examiner{Prof.}{}{D.Sc.}
+  %\examiner{Prof. ou Eng. se for o caso}{nome completo do membro da banca}{titulação}
+  
+  
+
+  
+  \department{DEE}
+  
+  %trocar para o número do mês e do ano da defesa
+  \date{05}{2024}
+
+%  \keyword{controle supervisório}
+%  \keyword{navegação de robôs móveis}
+%  \keyword{planejamento de trajetória}
+
+  %\maketitle
+
+  %\frontmatter
+  %\include{dedicatoria}
+  %\include{agradecimento}
+  \include{resumo}
+  %\include{abstract}
+
+% se não for usar uma dessas listas basta comentar a chamada
+  \tableofcontents
+  \listofalgorithms
+  \addcontentsline{toc}{chapter}{Lista de Algoritmos}
+  \listoffigures
+  \printglossary[type=\acronymtype, title= Lista de Siglas, toctitle=Lista de Siglas]
+  \printlosymbols
+  \printloabbreviations
+  
+  %\listoftables
+
+  \mainmatter
+
+  \include{src/funcoes_de_redes}
+  
+  \include{src/analise_de_redes}
+
+  \include{src/introducao_filtros}
+
+  \include{src/aproximacao}
+  
+  \include{src/sensibilidade}
+
+  \backmatter
+  \bibliographystyle{unsrt-br}
+  \bibliography{main.bib}
+  
+
+\end{document}
+
