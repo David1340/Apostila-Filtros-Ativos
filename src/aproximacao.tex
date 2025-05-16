@@ -8,6 +8,47 @@ O problema da aproximação é um conceito fundamental na teoria de controle e n
 
 \section{Chebyshev}
 
+\section{Elíptico}
+
+A aproximação Elíptico também conhecida como aproximação de Cauer caracteriza-se por possui oscilações tanto na faixa de passagem quanto na faixa de rejeição. Em troca, ele obtém uma queda mais acentuada na faixa de transição, o que faz com que a aproximação de Cauer seja capaz de satisfazer as especificações de projeto de filtros com uma ordem menor do que seria obtidos se fossem usadas as aproximações de Butterworth e de Chebyshev. Na tabela \ref{tab:eliptico} são apresentados exemplos de funções de transferência de aproximações de filtros passa-baixas do tipo elíptico com $A_\text{max} = 0.5$ dB e ordem 2. 
+
+\begin{table}[!h]
+    \centering
+    \renewcommand{\arraystretch}{2.0}  % aumenta o espaçamento entre as linhas
+    \caption{Exemplos de funções de transferência de filtros elípticos para $A_\text{max}  = 0.5$ dB de ordem 2.}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        $\Omega_s$ & $1/H(s)$ & $A_\text{min}$ (dB) \\
+        \hline 
+        1.5 & $ \frac{0.38540(s^2 + 3.92705)}{s^2 + 1.03153s + 1.60319}$ & 8.3\\
+        \hline
+        2.0 & $\frac{0.20133(s^2 + 7.4641)}{s^2 +  1.24504s +  1.59179}$& 13.9 \\
+        \hline
+        3.0 & $\frac{0.083974(s^2 + 17.48528)}{s^2 +  1.35715s +  1.55532}$& 21.5 \\ 
+        \hline       
+    \end{tabular} 
+    \label{tab:eliptico}
+\end{table}
+
 \section{Bessel}
 
-\section{Elliptic}
+As aproximações anteriores são focadas no ganho ou atenuação do filtro, porém em algumas aplicações como sistemas de transmissão digitais, a distorção de fase é um fator importante a ser considerado. A aproximação de Bessel é projetada para obter uma curva de fase tão plana quanto possível na faixa de passagem.
+
+A aproximação de Bessel normalziada é dada por:
+
+\begin{equation}
+    H(s) = \frac{B_n(0)}{B_n(s)}
+\end{equation}
+em que $B_n(s)$ é enésimo termo do polinômio de Bessel o qual é definido pela forma recursiva:
+
+\begin{equation}
+    B_0(s) = 1 
+\end{equation}
+
+\begin{equation}
+    B_1(s) = s + 1
+\end{equation}
+
+\begin{equation}
+    B_n(s) = (2n -1)B_{n-1}(s) + s^2B_{n-2}(s)
+\end{equation}
